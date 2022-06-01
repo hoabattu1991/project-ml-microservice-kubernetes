@@ -7,7 +7,7 @@
 # Create dockerpath
 # dockerpath=<your docker ID/path>
 dockerpath=nghiadoandai
-docker tag ml-microservice nghiadoandai/ml-microservice:v1.0.0
+docker tag ml-microservice "${dockerpath}/ml-microservice:v1.0.0"
 
 # Step 2:
 # Authenticate & tag
