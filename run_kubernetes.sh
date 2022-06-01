@@ -13,7 +13,7 @@ kubectl create deploy ml-microservice --image="$dockerpath/ml-microservice:v1.0.
 
 # # Step 3:
 # # List kubernetes pods
-# kubectl get deploy,rs,svc,pods
+kubectl get deploy,rs,svc,pods
 pod_name=$(kubectl get pods --no-headers -o custom-columns=":metadata.name")
 
 # # Step 4:
