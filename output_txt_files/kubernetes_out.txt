@@ -6,26 +6,58 @@ NAME                                         DESIRED   CURRENT   READY   AGE
 replicaset.apps/ml-microservice-584df88954   1         1         0       0s
 
 NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   2d12h
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   2d14h
 
 NAME                                   READY   STATUS              RESTARTS   AGE
-pod/ml-microservice-584df88954-sqm4f   0/1     ContainerCreating   0          0s
+pod/ml-microservice-584df88954-ddsr5   0/1     ContainerCreating   0          0s
 error: unable to forward port because pod is not running. Current status=Pending
-
 error: failed to create deployment: deployments.apps "ml-microservice" already exists
 NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/ml-microservice   1/1     1            1           11s
+deployment.apps/ml-microservice   1/1     1            1           4s
 
 NAME                                         DESIRED   CURRENT   READY   AGE
-replicaset.apps/ml-microservice-584df88954   1         1         1       11s
+replicaset.apps/ml-microservice-584df88954   1         1         1       4s
 
 NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   2d12h
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   2d14h
 
 NAME                                   READY   STATUS    RESTARTS   AGE
-pod/ml-microservice-584df88954-sqm4f   1/1     Running   0          11s
+pod/ml-microservice-584df88954-ddsr5   1/1     Running   0          4s
 Forwarding from 0.0.0.0:8000 -> 80
+Handling connection for 8000
 
-Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
+ * Serving Flask app "app" (lazy loading)
+
+ * Environment: development
+
+ * Debug mode: on
+
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+
+ * Restarting with stat
+
+ * Debugger is active!
+
+ * Debugger PIN: 341-206-643
+
+[2022-06-01 04:10:30,137] INFO in app: JSON payload:
+
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+
+[2022-06-01 04:10:30,148] INFO in app: Inference payload DataFrame:
+
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+
+0     0  6.575  296.0     15.3  396.9   4.98
+
+[2022-06-01 04:10:30,158] INFO in app: Scaling Payload:
+
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+
+0     0  6.575  296.0     15.3  396.9   4.98
+
+[2022-06-01 04:10:30,161] INFO in app: Log the output prediction value:
+
+[20.35373177134412]
+
+172.17.0.1 - - [01/Jun/2022 04:10:30] "POST /predict HTTP/1.1" 200 -
